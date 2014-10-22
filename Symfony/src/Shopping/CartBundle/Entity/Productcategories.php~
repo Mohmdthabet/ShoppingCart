@@ -1,0 +1,65 @@
+<?php
+
+namespace Shopping\CartBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Productcategories
+ *
+ * @ORM\Table(name="productcategories")
+ * @ORM\Entity
+ */
+class Productcategories
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ProductCategoryName", type="string", length=255, nullable=false)
+     */
+    private $productcategoryname;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+
+    /**
+     * Set productcategoryname
+     *
+     * @param string $productcategoryname
+     * @return Productcategories
+     */
+    public function setProductcategoryname($productcategoryname)
+    {
+        $this->productcategoryname = $productcategoryname;
+
+        return $this;
+    }
+
+    /**
+     * Get productcategoryname
+     *
+     * @return string 
+     */
+    public function getProductcategoryname()
+    {
+        return $this->productcategoryname;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

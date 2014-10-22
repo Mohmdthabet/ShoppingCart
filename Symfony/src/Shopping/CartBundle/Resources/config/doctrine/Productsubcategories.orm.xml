@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Shopping\CartBundle\Entity\Productsubcategories" table="productsubcategories">
+    <indexes>
+      <index name="ProductCategoryId" columns="ProductCategoryId"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="productsubcategoryname" type="string" column="ProductSubcategoryName" length="255" nullable="false"/>
+    <field name="datecreated" type="datetime" column="DateCreated" nullable="false"/>
+    <field name="dateupdated" type="datetime" column="DateUpdated" nullable="false"/>
+    <many-to-one field="productcategoryid" target-entity="Productcategories">
+      <join-columns>
+        <join-column name="ProductCategoryId" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

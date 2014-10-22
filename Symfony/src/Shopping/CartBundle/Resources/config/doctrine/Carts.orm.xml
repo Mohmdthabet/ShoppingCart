@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Shopping\CartBundle\Entity\Carts" table="carts">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cartname" type="string" column="CartName" length="255" nullable="false"/>
+    <field name="cartdescription" type="text" column="CartDescription" nullable="false"/>
+    <field name="datecreated" type="datetime" column="DateCreated" nullable="false"/>
+    <field name="dateupdated" type="datetime" column="DateUpdated" nullable="false"/>
+  </entity>
+</doctrine-mapping>
